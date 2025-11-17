@@ -1,8 +1,8 @@
-<ng-container>
-  <div class="card h-100" [routerLink]="['/movie', movie.id]">
-    <img [src]="posterUrl" class="card-img-top" [alt]="movie.title" />
-    <div class="card-body">
-      <h5 class="card-title">{{ movie.title }}</h5>
-    </div>
+@if (movie) {
+<div class="card h-100" [routerLink]="['/movie', movie.id]">
+  <img [src]="posterUrl" class="card-img-top" [alt]="movie.title" />
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.title }}</h5>
   </div>
-</ng-container>
+</div>
+}
