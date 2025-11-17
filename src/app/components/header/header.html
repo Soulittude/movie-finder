@@ -1,1 +1,18 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">MovieFinder</a>
+    <form class="d-flex" (ngSubmit)="onSearchSubmit(searchInput.value)" #searchForm="ngForm">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search for a movie..."
+        aria-label="Search"
+        #searchInput
+        required
+      />
+      <button class="btn btn-outline-success" type="submit" [disabled]="!searchForm.valid">
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
