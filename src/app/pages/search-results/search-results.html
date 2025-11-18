@@ -1,1 +1,21 @@
-<p>search-results works!</p>
+<div class="container mt-4">
+  <h1 class="mb-4">
+    Results for: <span class="text-success">{{ query }}</span>
+  </h1>
+
+  @if (movies.length === 0) {
+  <div class="alert alert-warning">No movies found for your search.</div>
+  } @if (movies.length > 0) {
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    @for (movie of movies; track movie.id) {
+    <div class="col">
+      <app-movie-card [movie]="movie"></app-movie-card>
+    </div>
+    }
+  </div>
+  } @if (currentPage < totalPages) {
+  <div class="text-center mt-4">
+    <button class="btn btn-primary" (click)="loadMore()">Load More</button>
+  </div>
+  }
+</div>
