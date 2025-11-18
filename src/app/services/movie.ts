@@ -26,7 +26,7 @@ export class MovieService {
     );
   }
 
-  getMovieDetails(id: string): Observable<ApiResult<Movie>> {
-    return this.http.get<ApiResult<Movie>>(`${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`);
+  getMovieDetails(id: string): Observable<Movie> {
+    return this.http.get<Movie>(`${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`);
   }
 }
